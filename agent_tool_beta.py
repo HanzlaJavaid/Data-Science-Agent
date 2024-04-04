@@ -71,7 +71,11 @@ def agent_inference(pipeline,date_dataframe,to_plot=True):
 def feature_store_pants(sku_id='all', size='all', pant_type='all', fabric='all', waist='all', front_pockets='all', back_pockets='all', closure='all', belt_loops='all', cuff='all', store='all', region='all'):
   kwargs = {k: v for k, v in locals().items() if k != 'self' and k != 'kwargs' and v != 'all'}
   import pandas as pd
-  df = pd.read_csv('datasets/final_pants_dataset.csv')
+  try:
+      df = pd.read_csv("dataset.csv")
+  except:
+      df = pd.read_csv("https://datasetsdatascienceagent.blob.core.windows.net/salesdatasets/final_pants_dataset.csv")
+      df.to_csv("dataset.csv")
   column_mapping = {
         'sku_id': 'SKU ID',
         'size': 'Size',
