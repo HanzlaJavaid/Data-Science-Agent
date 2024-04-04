@@ -15,19 +15,6 @@ from llama_index.core import set_global_handler
 
 os.environ['OPENAI_API_KEY'] = ''
 
-os.environ['LANGGUSE_HOST'] = 'https://cloud.langfuse.com/'
-os.environ['LANGFUSE_SECRET_KEY'] = ''
-os.environ['LANGFUSE_PUBLIC_KEY'] = ''
-
-from langfuse import Langfuse
-
-langfuse = Langfuse(
-secret_key="sk-lf-42cca55a-9678-4af9-9370-0ec040a6c7d0",
-public_key="pk-lf-722fec09-1980-44d4-aade-de7e9b60002e",
-host="https://cloud.langfuse.com/")
-
-set_global_handler("langfuse")
-
 
 # Phoenix can display in real time the traces automatically
 # collected from your LlamaIndex application.
