@@ -13,7 +13,7 @@ import os
 from agent_tool_beta import *
 from llama_index.core import set_global_handler
 
-OAI_KEY = os.environ["OPENAI_API_KEY"]
+openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
 
 # Phoenix can display in real time the traces automatically
 # collected from your LlamaIndex application.
@@ -58,7 +58,7 @@ python_repl = FunctionTool.from_defaults(
 
 
 context = context_v5
-llm_openai = OpenAI(model="gpt-3.5-turbo-0125",temperature = 0.5,api_key=OAI_KEY)
+llm_openai = OpenAI(model="gpt-3.5-turbo-0125",temperature = 0.5,api_key=openai_api_key)
 llm = llm_openai
 agent = ReActAgent.from_tools(
             [python_repl],
