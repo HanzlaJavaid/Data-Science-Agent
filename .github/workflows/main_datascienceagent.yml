@@ -68,7 +68,7 @@ jobs:
           client-id: '7fff5d0e-e00f-450c-9811-f6dffeb928ff'
           tenant-id: '4f1f69e1-2b1c-48b0-906d-8939539473a1'
           subscription-id: 'fb23f03e-ffb1-43a1-8d9c-e69787357402'
-          auth-type: 'IDENTITY'
+          auth_type: 'IDENTITY'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
